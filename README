@@ -1,0 +1,7 @@
+This is an open sour Java Script library to make client side form validation easier. It's very basic right now and open to contributions. Below is a roadmap of features that can be implemented. Feel free. 
+
+- Writing the warning message.
+- Expanding date validation with different options.
+- Password difficulty checker
+
+

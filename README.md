@@ -1,19 +1,26 @@
 #JS Form Validator
 
-This is an open source Java Script library that makes client side form validation easier. 
+JSFV is an open source Java Script library that simplifies client side form validation. 
+
 It's very basic right now, and we welcome contributions.
 
-To get started, check out  [jsformvalidator.com](http://www.jsformvalidator.com/ "jsformvalidator") 
+To learn more, check out  [jsformvalidator.com](http://www.jsformvalidator.com/ "jsformvalidator") 
 
 ##Instructions
-In order for the validator to work, the `onsubmit="return validateForm(this)"` event should be added to the form tag. 
 
-`<form id="form_main" method="post" action="index.php" onblur="return validateForm(this)" onsubmit="return validateForm(this)">`
+###Validate on submission
+Add `onsubmit="return validateForm(this)"` to your form tag. For example,
 
-Class field of the object determines the type of the validation(`class="JSFV-required"`). 
-There might be multiple types of validation in one object(`class="JSFV-required JSFV-date"`) 
+`<form id="form_main" method="post" action="submit.php" onsubmit="return validateForm(this)">`
 
-All the types are listed below:
+This will call the validator when a user attempts to submit.
+
+###Label restrictions on input
+Describe the restrictions on each input field through classes.
+You can also place multiple types of validation on a single field.
+For example, to require an email address,use `class="JSFV-required JSFV-email"`
+
+Here is a listing of class names that are validated.
 
 - `JSFV-required`
 - `JSFV-email`
@@ -26,18 +33,26 @@ All the types are listed below:
 - `JSFV-password-med`
 - `JSFV-password-strong`
 
-If the validation will be done right after moving to a new field 
-`onblur="jsfvRealtime(this)"` should be added to the tag.
+####Password Validation
 
-e.g. 
-`<td class="field"><input type="text" id="date" class="JSFV-date" onblur="jsfvRealtime(this)"/>`
+- "Strong" passwords require at least one character (!@#$%^&*), one digit, and a minimum of 8 characters
+- "Medium" passwords require at least on digit and a minimum of 8 characters
+- "Weak" passwords require a minimum of 6 passwords.
+
+`JSFV-password` defaults to the strong password requirement.
+
+###Real-time Validation
+To validate a field directly after the user completes a field, add 
+`onblur="jsfvRealtime(this)"` to the tag.
+
+`<input type="text" id="date" class="JSFV-date" onblur="jsfvRealtime(this)"/>`
 
 If the field cannot pass the validation, the background will return to red, otherwise white. 
 These colors can be changed in the jsfvRealtime() function. 
 
 ##Roadmap
 
-- Writing the warning message.
+- Passing a warning message.
 - Expanding date validation with different options.
 
 ##Authors

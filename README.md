@@ -57,12 +57,19 @@ These colors can be changed in the jsfvRealtime() function.
 
 ##Authors
 
+Ryan Lin
+
+- [@ryanlin_cmu](https://twitter.com/#!/ryanlin_cmu "@ryanlin_cmu")
+- [ryanlin.com](http://ryanlin.com "ryanlin.com")
+
 Ilteris Canberk
 
 - [@icanberk](https://twitter.com/icanberk "@icanberk") 
+- [icanberk.com](http://icanberk.com/ "icanberk.co/")
 - anything [at] icanberk [dot] com
 
 Ryhan Hassan
 
 - [@rthprog](https://twitter.com/rthprog "@rthprog") 
+- [rthprog.github.com](http://rthprog.github.com/ "rthprog.github.com")
 - rthprog [at] gmail [dot] com

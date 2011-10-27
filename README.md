@@ -36,8 +36,8 @@ Here is a listing of class names that are validated.
 ####Password Validation
 
 - "Strong" passwords require at least one character (!@#$%^&*), one digit, and a minimum of 8 characters
-- "Medium" passwords require at least on digit and a minimum of 8 characters
-- "Weak" passwords require a minimum of 6 passwords.
+- "Medium" passwords require at least one digit and a minimum of 8 characters
+- "Weak" passwords require a minimum of 6 characters.
 
 `JSFV-password` defaults to the strong password requirement.
 

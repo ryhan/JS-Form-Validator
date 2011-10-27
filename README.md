@@ -21,6 +21,7 @@ All the types are listed below:
 - `JSFV-alpha`
 - `JSFV-numeric`
 - `JSFV-alphanumeric`
+- `JSFV-password`
 
 If the validation will be done right after moving to a new field 
 `onblur="jsfvRealtime(this)"` should be added to the tag.
@@ -40,9 +41,11 @@ These colors can be changed in the jsfvRealtime() function.
 ##Authors
 
 Ilteris Canberk
+
 - [@icanberk](https://twitter.com/icanberk "@icanberk") 
 - anything [at] icanberk [dot] com
 
 Ryhan Hassan
+
 - [@rthprog](https://twitter.com/rthprog "@rthprog") 
 - rthprog [at] gmail [dot] com

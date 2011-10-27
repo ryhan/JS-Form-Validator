@@ -57,6 +57,12 @@ function JSFV_validateDate(value)
 	return regex.test(value); 
 }
 
+//require special character, number, and length of 8
+function JSVW_validatePassword(value){	
+	var special_char = /.[!,@,#,$,%,^,&,*,?,_,~]/;
+	return (value.match(special_char)!=null && value.match(/\d+/)!=null	&& (value.length>7));
+}
+
 function validateForm(form)
 {
 	var elements = form.elements; 
@@ -66,7 +72,8 @@ function validateForm(form)
 		"JSFV-date" : JSFV_validateDate, 
 		"JSFV-alpha" : JSFV_validateAlpha, 
 		"JSFV-numeric" : JSFV_validateNumeric, 
-		"JSFV-alphanumeric" : JSFV_validateAlphanumeric
+		"JSFV-alphanumeric" : JSFV_validateAlphanumeric,
+		"JSFV-password" : JSVW_validatePassword
 	}; 
 	
 	for (var c = 0; c < elements.length; c++)
@@ -102,7 +109,8 @@ function jsfvRealtime(elem)
 		"JSFV-date" : JSFV_validateDate, 
 		"JSFV-alpha" : JSFV_validateAlpha, 
 		"JSFV-numeric" : JSFV_validateNumeric, 
-		"JSFV-alphanumeric" : JSFV_validateAlphanumeric
+		"JSFV-alphanumeric" : JSFV_validateAlphanumeric,
+		"JSFV-password" : JSVW_validatePassword
 	}; 
 	
 

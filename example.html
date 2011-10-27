@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title> JS Form Validator Example</title>
+	<script type="text/javascript" src="jsfv_v2.js"></script>
+	<style>
+		html, body{
+			font-size:15px;
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		}
+		form{
+			width:700px;
+			margin:100px auto;
+		}
+		input[type=text]{
+			padding:3px;
+			font-size:13px;
+		}
+		.html{
+			font-size:13px;
+			padding:5px;
+			background-color:#EEE;
+			border:1px solid #DDD;
+			border-radius:2px;
+		}
+	</style>
+</head>
+<body>
+	<form id="form_main" method="post" action="index.php" onblur="return validateForm(this)" onsubmit="return validateForm(this)">
+		<table>
+		<tr>
+			<td class="label">Required</td>
+			<td class="field"><input type="text" id="required" class="JSFV-required" onblur="jsfvRealtime(this)" placeholder="Name" /></td>
+			<td class="html">input type="text" id="required" class="JSFV-required" <i>onblur="jsfvRealtime(this)"</i></td>
+		</tr>
+		<tr>
+			<td class="label">Email</td>
+			<td class="field"><input type="text" id="email" class="JSFV-email" onblur="jsfvRealtime(this)" placeholder="foo@bar.com"/></td>
+			<td class="html">input type="text" id="email" class="JSFV-email" <i>onblur="jsfvRealtime(this)"</i></td>
+		</tr>
+		<tr>
+			<td class="label">Date</td>
+			<td class="field"><input type="text" id="date" class="JSFV-date" onblur="jsfvRealtime(this)" placeholder="1/1/2001"/></td>
+			<td class="html">input type="text" id="date" class="JSFV-date" <i>onblur="jsfvRealtime(this)"</i></td>
+		</tr>
+		<tr>
+			<td class="label">Alpha</td>
+			<td class="field"><input type="text" id="alpha" class="JSFV-alpha" onblur="jsfvRealtime(this)" placeholder="OxDEADBEEF" /></td>
+			<td class="html">input type="text" id="alpha" class="JSFV-alpha" <i>onblur="jsfvRealtime(this)"</i></td>
+		</tr>
+		<tr>
+			<td class="label">Numeric</td>
+			<td class="field"><input type="text" id="numeric" class="JSFV-numeric" onblur="jsfvRealtime(this)" placeholder="42"/></td>
+			<td class="html">input type="text" id="numeric" class="JSFV-numeric" <i>onblur="jsfvRealtime(this)"</i></td>
+		</tr>
+		<tr>
+			<td class="label">Alphanumeric</td>
+			<td class="field"><input type="text" id="alphanumeric" class="JSFV-alphanumeric" onblur="jsfvRealtime(this)" placeholder="UA272"	/></td>
+			<td class="html">input type="text" id="alphanumeric" class="JSFV-alphanumeric" <i>onblur="jsfvRealtime(this)"</i></td>
+		</tr>
+		<tr>
+			<td class="label"></td>
+			<td class="field"><input type="submit" value="Submit Form" /></td>
+			<td></td>
+		</tr>
+		</table>
+	</form>
+</body>
+</html>

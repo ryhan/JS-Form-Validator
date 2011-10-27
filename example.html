@@ -12,7 +12,7 @@
 			width:700px;
 			margin:100px auto;
 		}
-		input[type=text]{
+		input[type=text],input[type=password]{
 			padding:3px;
 			font-size:13px;
 		}
@@ -54,14 +54,15 @@
 			<td class="html">input type="text" id="numeric" class="JSFV-numeric" <i>onblur="jsfvRealtime(this)"</i></td>
 		</tr>
 		<tr>
-			<td class="label">Password</td>
-			<td class="field"><input type="text" id="password" class="JSFV-password" onblur="jsfvRealtime(this)"/></td>
-			<td class="html">input type="password" id="password" class="JSFV-password" <i>onblur="jsfvRealtime(this)"</i>/</td>
-		</tr>
-		<tr>
 			<td class="label">Alphanumeric</td>
 			<td class="field"><input type="text" id="alphanumeric" class="JSFV-alphanumeric" onblur="jsfvRealtime(this)" placeholder="UA272"	/></td>
 			<td class="html">input type="text" id="alphanumeric" class="JSFV-alphanumeric" <i>onblur="jsfvRealtime(this)"</i></td>
+		</tr>
+		<tr>
+			<td class="label">Password</td>
+			<td class="field"><input type="password" id="password" class="JSFV-password" onblur="jsfvRealtime(this)"/></td>
+			<td class="html">input type="password" id="password" class="JSFV-password" <i>onblur="jsfvRealtime(this)"</i><br><br>
+				Requires special character (!@#$%^&*), number, and length 8</td>
 		</tr>
 		
 		<tr>

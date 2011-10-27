@@ -148,7 +148,7 @@ function jsfvRealtime(elem)
 					}
 					else
 					{
-						elem.style.backgroundColor="#FFFFFF";
+						elem.style.backgroundColor="#FFF";
 					}	 
 				}
 			}

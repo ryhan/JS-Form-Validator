@@ -70,7 +70,7 @@ function JSVW_validatePassword_weak(value){
 }
 
 function JSVW_validatePassword_med(value){
-	return JSVW_requireNum(value) && (value.length>8);
+	return JSVW_requireNum(value) && (value.length>7);
 }
 
 function JSVW_validatePassword_strong(value){

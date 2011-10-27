@@ -39,7 +39,6 @@ These colors can be changed in the jsfvRealtime() function.
 
 - Writing the warning message.
 - Expanding date validation with different options.
-- Password difficulty checker
 
 ##Authors
 

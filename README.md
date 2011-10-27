@@ -47,8 +47,8 @@ To validate a field directly after the user completes a field, add
 
 `<input type="text" id="date" class="JSFV-date" onblur="jsfvRealtime(this)"/>`
 
-If the field cannot pass the validation, the background will return to red, otherwise white. 
-These colors can be changed in the jsfvRealtime() function. 
+The field will become highlighted if it cannot pass the validation. 
+The colors assoicated with the highlighted state can be changed in the jsfvRealtime() function. 
 
 ##Roadmap
 

@@ -148,10 +148,12 @@ function jsfvRealtime(elem)
 				{
 					if (!(mapper[a](elem.value)))
 					{
-						elem.style.backgroundColor="#FD9B9D";
+						elem.style.color="#F00";
+						elem.style.backgroundColor="#FFFFC5";
 					}
 					else
 					{
+						elem.style.color="#111";
 						elem.style.backgroundColor="#FFF";
 					}	 
 				}

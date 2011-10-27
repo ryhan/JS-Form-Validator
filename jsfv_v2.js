@@ -57,10 +57,24 @@ function JSFV_validateDate(value)
 	return regex.test(value); 
 }
 
-//require special character, number, and length of 8
-function JSVW_validatePassword(value){	
+function JSVW_requireChar(value){	
 	var special_char = /.[!,@,#,$,%,^,&,*,?,_,~]/;
-	return (value.match(special_char)!=null && value.match(/\d+/)!=null	&& (value.length>7));
+	return (value.match(special_char)!=null);
+}
+function JSVW_requireNum(value){
+	return (value.match(/\d+/)!=null);
+}
+
+function JSVW_validatePassword_weak(value){
+	return (value.length>5);
+}
+
+function JSVW_validatePassword_med(value){
+	return JSVW_requireNum(value) && (value.length>8);
+}
+
+function JSVW_validatePassword_strong(value){
+	return JSVW_requireChar(value) && JSVW_requireNum(value) && (value.length>7);
 }
 
 function validateForm(form)
@@ -73,7 +87,10 @@ function validateForm(form)
 		"JSFV-alpha" : JSFV_validateAlpha, 
 		"JSFV-numeric" : JSFV_validateNumeric, 
 		"JSFV-alphanumeric" : JSFV_validateAlphanumeric,
-		"JSFV-password" : JSVW_validatePassword
+		"JSFV-password" : JSVW_validatePassword_strong,
+		"JSFV-password-weak" : JSVW_validatePassword_weak,
+		"JSFV-password-med" : JSVW_validatePassword_med,
+		"JSFV-password-strong" : JSVW_validatePassword_strong
 	}; 
 	
 	for (var c = 0; c < elements.length; c++)
@@ -102,7 +119,6 @@ function validateForm(form)
 
 function jsfvRealtime(elem)
 {
-		
 	var mapper = {
 		"JSFV-required" : JSFV_validateRequired,
 		"JSFV-email" : JSFV_validateEmail, 
@@ -110,7 +126,10 @@ function jsfvRealtime(elem)
 		"JSFV-alpha" : JSFV_validateAlpha, 
 		"JSFV-numeric" : JSFV_validateNumeric, 
 		"JSFV-alphanumeric" : JSFV_validateAlphanumeric,
-		"JSFV-password" : JSVW_validatePassword
+		"JSFV-password" : JSVW_validatePassword_strong,
+		"JSFV-password-weak" : JSVW_validatePassword_weak,
+		"JSFV-password-med" : JSVW_validatePassword_med,
+		"JSFV-password-strong" : JSVW_validatePassword_strong
 	}; 
 	
 

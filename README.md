@@ -22,6 +22,9 @@ All the types are listed below:
 - `JSFV-numeric`
 - `JSFV-alphanumeric`
 - `JSFV-password`
+- `JSFV-password-weak`
+- `JSFV-password-med`
+- `JSFV-password-strong`
 
 If the validation will be done right after moving to a new field 
 `onblur="jsfvRealtime(this)"` should be added to the tag.

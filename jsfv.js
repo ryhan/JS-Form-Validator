@@ -3,6 +3,19 @@
  *
 **/
 
+var mapper = {
+			"JSFV-required" : JSFV_validateRequired,
+			"JSFV-email" : JSFV_validateEmail, 
+			"JSFV-date" : JSFV_validateDate, 
+			"JSFV-alpha" : JSFV_validateAlpha, 
+			"JSFV-numeric" : JSFV_validateNumeric, 
+			"JSFV-alphanumeric" : JSFV_validateAlphanumeric,
+			"JSFV-password" : JSFV_validatePassword,
+			"JSFV-password-weak" : JSFV_validatePassword_weak,
+			"JSFV-password-med" : JSFV_validatePassword_med,
+			"JSFV-password-strong" : JSFV_validatePassword_strong
+	};
+
 function JSFV_validateRequired(value)
 {
 	return (value.length > 0); 
@@ -85,22 +98,15 @@ function JSFV_validatePassword(value){
 function validateForm(form)
 {
 	var elements = form.elements; 
-	var mapper = {
-		"JSFV-required" : JSFV_validateRequired,
-		"JSFV-email" : JSFV_validateEmail, 
-		"JSFV-date" : JSFV_validateDate, 
-		"JSFV-alpha" : JSFV_validateAlpha, 
-		"JSFV-numeric" : JSFV_validateNumeric, 
-		"JSFV-alphanumeric" : JSFV_validateAlphanumeric,
-		"JSFV-password" : JSFV_validatePassword,
-		"JSFV-password-weak" : JSFV_validatePassword_weak,
-		"JSFV-password-med" : JSFV_validatePassword_med,
-		"JSFV-password-strong" : JSFV_validatePassword_strong
-}; 
 	
-	for (var c = 0; c < elements.length; c++)
+	var elementsArray = [];
+    
+	//convertiong from HTML collection to array
+    for (var i = 0; i < elements.length; ++i) { elementsArray.push(elements[i]); }
+	
+	for (var c = 0; c < elementsArray.length; c++)
 	{
-		var elem = elements[c]; 
+		var elem = elementsArray[c]; 
 		var value = elem.value; 
 		var classes = elem.className.split(" "); 
 		
@@ -123,19 +129,7 @@ function validateForm(form)
 }
 
 function jsfvRealtime(elem)
-{
-	var mapper = {
-		"JSFV-required" : JSFV_validateRequired,
-		"JSFV-email" : JSFV_validateEmail, 
-		"JSFV-date" : JSFV_validateDate, 
-		"JSFV-alpha" : JSFV_validateAlpha, 
-		"JSFV-numeric" : JSFV_validateNumeric, 
-		"JSFV-alphanumeric" : JSFV_validateAlphanumeric,
-		"JSFV-password" : JSFV_validatePassword,
-		"JSFV-password-weak" : JSFV_validatePassword_weak,
-		"JSFV-password-med" : JSFV_validatePassword_med,
-		"JSFV-password-strong" : JSFV_validatePassword_strong
-}; 
+{		
 	
 		var value = elem.value; 
 		var classes = elem.className.split(" "); 
